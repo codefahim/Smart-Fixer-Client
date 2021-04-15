@@ -1,0 +1,9 @@
+.Color-Apple{
+    color:#e4274aad
+}
+.cardHover:Hover{
+    box-shadow: -1px 3px 109px -66px rgba(228,39,74,0.93);
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}

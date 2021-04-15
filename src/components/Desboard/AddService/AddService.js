@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import DesBoard from '../Desboard/Desboard';
 import './AddService.css';
 const axios = require('axios');
 const AddService = () => {
@@ -54,44 +55,51 @@ const AddService = () => {
     formState: { errors },
   } = useForm();
   return (
-    <div className='text-center mt-5'>
-      <h3>Add Your Service</h3>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          className='formStyle'
-          placeholder=' Service Title'
-          {...register('ServiceTitle', { required: true })}
-        />
-        <textarea
-          className='formStyle'
-          placeholder='Description'
-          {...register('Description', { required: true })}
-        />
-        <input
-          className='formStyle'
-          placeholder='Enter Service price'
-          type='text'
-          {...register('Price', { required: true })}
-        />
-        <input
-          className='formStyle'
-          type='file'
-          {...register('ImageOfService', { required: true })}
-          onChange={handleImageOnChange}
-        />
+    <div className='row w-100'>
+      <div className='col-md-3 Primary-bg-Color Primary-height text-light'>
+        <DesBoard />
+      </div>
+      <div className='col-md-9 bg-Secondary-Color'>
+        <div className='text-center mt-5'>
+          <h3>Add Your Service</h3>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              className='formStyle'
+              placeholder=' Service Title'
+              {...register('ServiceTitle', { required: true })}
+            />
+            <textarea
+              className='formStyle'
+              placeholder='Description'
+              {...register('Description', { required: true })}
+            />
+            <input
+              className='formStyle'
+              placeholder='Enter Service price'
+              type='text'
+              {...register('Price', { required: true })}
+            />
+            <input
+              className='formStyle'
+              type='file'
+              {...register('ImageOfService', { required: true })}
+              onChange={handleImageOnChange}
+            />
 
-        {imageUrl !== '' && (
-          <input className='formSubmit' type='submit' value='Add Service' />
-        )}
-        {imageUrl == '' && (
-          <input
-            className='formSubmit'
-            type='submit'
-            value='Add Service'
-            disabled
-          />
-        )}
-      </form>
+            {imageUrl !== '' && (
+              <input className='formSubmit' type='submit' value='Add Service' />
+            )}
+            {imageUrl == '' && (
+              <input
+                className='formSubmit'
+                type='submit'
+                value='Add Service'
+                disabled
+              />
+            )}
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
