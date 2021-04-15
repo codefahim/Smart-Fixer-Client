@@ -1,5 +1,6 @@
 import React from 'react';
 import AboutTechnician from '../AboutTechnician/AboutTechnician';
+import FAQ from '../FAQ/FAQ';
 import HomeBanner from '../HomeBanner/HomeBanner';
 import Nav from '../Nav/Nav';
 import Review from '../Review/Review';
@@ -13,6 +14,7 @@ const Home = () => {
       <Service />
       <AboutTechnician />
       <Review />
+      <FAQ />
     </section>
   );
 };
