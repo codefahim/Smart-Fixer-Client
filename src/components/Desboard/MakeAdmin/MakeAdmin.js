@@ -33,7 +33,7 @@ const MakeAdmin = () => {
     };
 
     if (imageUrl !== '') {
-      fetch(`http://localhost:5000/addAdmin`, {
+      fetch(`https://smartfixer.herokuapp.com/addAdmin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData),
@@ -54,6 +54,7 @@ const MakeAdmin = () => {
   } = useForm();
   return (
     <div className='text-center mt-5'>
+      <h3>Add Admin</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           className='formStyle'
