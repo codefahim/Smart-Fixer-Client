@@ -2,6 +2,20 @@
   text-align: center;
 }
 
+.Primary-Color{
+  color: #022243;
+}.Primary-bg-Color{
+  background-color: #022243;
+}
+.Primary-height{
+  min-height: 630px;
+}
+.bg-Secondary-Color{
+  background-color: #ffc04c61
+} 
+
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

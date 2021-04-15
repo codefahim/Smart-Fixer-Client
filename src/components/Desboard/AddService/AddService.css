@@ -1,0 +1,14 @@
+.formStyle{
+   display:block;
+    margin: 10px auto;
+    border: 0;
+    padding: 5px 15px;
+    border-radius: 6px;
+    width: 400px;
+}
+.formSubmit{
+    background: #00ff956b;
+    border: 0;
+    padding: 5px 22px;
+    border-radius: 5px;
+}
