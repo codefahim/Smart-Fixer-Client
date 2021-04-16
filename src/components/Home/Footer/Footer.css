@@ -1,0 +1,10 @@
+footer{
+    border-radius: 0 0 15px 15px;
+
+}
+.anchor a{
+    color: #b3bec8;
+    text-decoration: none;
+    display: block;
+}
+.anchor a:hover{color:#27e491; font-weight: bold;}
