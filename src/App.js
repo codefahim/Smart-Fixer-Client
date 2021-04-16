@@ -1,40 +1,61 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import DesBoard from './components/Desboard/Desboard/Desboard';
 import Home from './components/Home/Home/Home';
 import AddService from './components/Desboard/AddService/AddService';
 import OrderLIst from './components/Desboard/OrderList/OrderLIst';
 import MakeAdmin from './components/Desboard/MakeAdmin/MakeAdmin';
 import ManageService from './components/Desboard/ManageService/ManageService';
 import DashBoard from './components/Desboard/DashBoard/DashBoard';
-
+import Order from './components/Order/Order';
+import Login from './components/Login/Login';
+import NoMatch from './components/NoMatch/NoMatch';
+import { createContext, useState } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import LogOut from './components/Desboard/LogOut/LogOut';
+export const userContext = createContext([]);
 function App() {
+  const [userInfo, setUserInfo] = useState({});
+  console.log(userInfo);
   return (
-    <Router>
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route path='/Home'>
-          <Home />
-        </Route>
-        <Route path='/DashBoard'>
-          <DashBoard   />
-        </Route>
-        <Route path='/AddService'>
-          <AddService />
-        </Route>
-        <Route path='/OrderList'>
-          <OrderLIst />
-        </Route>
-        <Route path='/MakeAdmin'>
-          <MakeAdmin />
-        </Route>
-        <Route path='/ManageService'>
-          <ManageService />
-        </Route>
-      </Switch>
-    </Router>
+    <userContext.Provider value={[userInfo, setUserInfo]}>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/Home'>
+            <Home />
+          </Route>
+          <PrivateRoute path='/DashBoard'>
+            <DashBoard />
+          </PrivateRoute>
+          <PrivateRoute path='/Order'>
+            <Order />
+          </PrivateRoute>
+          <PrivateRoute path='/AddService'>
+            <AddService />
+          </PrivateRoute>
+          <PrivateRoute path='/OrderList'>
+            <OrderLIst />
+          </PrivateRoute>
+          <PrivateRoute path='/MakeAdmin'>
+            <MakeAdmin />
+          </PrivateRoute>
+          <Route path='/Login'>
+            <Login />
+          </Route>
+          <PrivateRoute path='/ManageService'>
+            <ManageService />
+          </PrivateRoute>
+          <PrivateRoute path='/LogOut'>
+            <LogOut />
+          </PrivateRoute>
+          <Route path='*'>
+            <NoMatch />
+          </Route>
+        </Switch>
+      </Router>
+    </userContext.Provider>
   );
 }
 

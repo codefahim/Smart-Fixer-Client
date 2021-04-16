@@ -65,7 +65,7 @@ const DesBoard = () => {
           </Link>
         </li>
         <li className='nav-item  ms-5'>
-          <Link className='nav-link text-light linkStyle'>
+          <Link className='nav-link text-light linkStyle' to='/LogOut'>
             {' '}
             <IoEnterOutline /> LogOut
           </Link>

@@ -1,0 +1,10 @@
+.login{
+    display: block;
+    width: 400px;
+    border-radius: 15px 15px;
+    margin: auto;
+}
+.loginDiv{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}

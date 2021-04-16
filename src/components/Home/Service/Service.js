@@ -1,16 +1,40 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Service.css';
-const Service = () => {
+import { useHistory } from "react-router-dom";
+
+
+
+const Service = () =>
+{
+  var email = sessionStorage.getItem('email');
+   const tokenId = sessionStorage.getItem('token');
   const [service, setService] = useState([]);
   useEffect(() => {
     fetch(`http://localhost:5000/Services`)
       .then((response) => response.json())
       .then((data) => setService(data));
   }, []);
-  console.log(service);
-  const handleDivClick = () => {
-    console.log('kaj kore');
+  let history = useHistory();
+  const handleDivClick = (item) => {
+   delete(item._id)
+    // history.push('/Order');
+    console.log(item)
+    if (tokenId == null)
+    {
+      history.push('/Login');
+    } else
+    {
+       item['email'] = email;
+       fetch(`http://localhost:5000/ProductAdd`, {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify(item),
+       }).then((result) => {
+         if (result) {
+           alert('Product Successfully added!');
+         }
+       });
+   }
   };
   return (
     <section>
@@ -20,10 +44,13 @@ const Service = () => {
       <div className='row'>
         {service.map((item) => (
           <div className='col-md-4 my-2'>
-            <div onClick={handleDivClick} className='card cardHover'>
+            <div
+              onClick={() => handleDivClick(item)}
+              className='card cardHover'
+            >
               <img
                 src={item.image}
-                class='card-img-top image-fluid w-25 m-auto mt-4'
+                className='card-img-top image-fluid w-25 m-auto mt-4'
                 alt='...'
               />
               <div className='card-body text-center'>
