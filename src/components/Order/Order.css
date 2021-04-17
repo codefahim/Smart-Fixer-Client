@@ -1,0 +1,7 @@
+.iconOfAction{
+    font-size:25px;
+
+}
+.iconOfAction:hover{
+    cursor: pointer;
+}

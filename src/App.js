@@ -12,6 +12,7 @@ import NoMatch from './components/NoMatch/NoMatch';
 import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import LogOut from './components/Desboard/LogOut/LogOut';
+import BookService from './components/Desboard/BookService/BookService';
 export const userContext = createContext([]);
 function App() {
   const [userInfo, setUserInfo] = useState({});
@@ -49,6 +50,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path='/LogOut'>
             <LogOut />
+          </PrivateRoute>
+          <PrivateRoute path='/BookService'>
+            <BookService />
           </PrivateRoute>
           <Route path='*'>
             <NoMatch />

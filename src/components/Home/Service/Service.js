@@ -24,7 +24,8 @@ const Service = () =>
       history.push('/Login');
     } else
     {
-       item['email'] = email;
+      item['email'] = email;
+      item['status'] = 'Not Paid';
        fetch(`http://localhost:5000/ProductAdd`, {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },

@@ -1,0 +1,27 @@
+.FormGroup>.FormRow>input{
+        display: block;
+    margin: 10px auto;
+    border: 0;
+    padding: 5px 15px;
+    border-radius: 6px;
+    width: 400px;
+}
+.cardOfPay{
+     display: block;
+    margin: 10px auto;
+    border: 0;
+    padding: 5px 15px;
+    border-radius: 6px;
+    width: 400px;
+}
+.ElementsApp {
+    background-color: red;
+}
+.InputElement{
+    color: black!important;
+}
+.ResultTitle{
+    color: green;
+    font-size:25px;
+    font-weight: bold;
+}
