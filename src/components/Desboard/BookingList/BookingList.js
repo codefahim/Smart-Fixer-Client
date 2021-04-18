@@ -97,7 +97,7 @@ const BookingList = () => {
             </>
           )}
 
-          {admin === 'false' && (
+          {admin === 'true' && (
             <>
               {singleService.map((service) => (
                 <div className='col-md-4'>
