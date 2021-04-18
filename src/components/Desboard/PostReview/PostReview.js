@@ -42,8 +42,7 @@ const PostReview = () => {
                         {service.user.ServiceTitle}
                         <textarea
                           id='customerReview'
-                          value={service.review}
-                          placeholder='Enter Your Review'
+                          placeholder={service.review}
                           required
                         ></textarea>
                         <button onClick={() => handleSetReview(service._id)}>
