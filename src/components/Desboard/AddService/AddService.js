@@ -35,7 +35,7 @@ const AddService = () => {
     };
 
     if (imageUrl !== '') {
-      fetch(`http://localhost:5000/addService`, {
+      fetch(`https://smartfixer.herokuapp.com/addService`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData),

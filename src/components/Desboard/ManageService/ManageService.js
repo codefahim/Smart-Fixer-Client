@@ -7,12 +7,12 @@ const ManageService = () => {
   const [service, setService] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/Services`)
+    fetch(`https://smartfixer.herokuapp.com/Services`)
       .then((response) => response.json())
       .then((result) => setService(result));
   }, [service]);
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/service/` + id, {
+    fetch(`https://smartfixer.herokuapp.com/service/` + id, {
       method: 'DELETE',
     }).then((result) => {
       alert('Your Product Delete was successful');

@@ -10,7 +10,7 @@ const Service = () =>
    const tokenId = sessionStorage.getItem('token');
   const [service, setService] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/Services`)
+    fetch(`https://smartfixer.herokuapp.com/Services`)
       .then((response) => response.json())
       .then((data) => setService(data));
   }, []);
@@ -28,7 +28,7 @@ const Service = () =>
       item['status'] = 'Not Paid';
       item['shipment'] = 'pending';
       item['review'] = 'No review';
-      fetch(`http://localhost:5000/ProductAdd`, {
+      fetch(`https://smartfixer.herokuapp.com/ProductAdd`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(item),

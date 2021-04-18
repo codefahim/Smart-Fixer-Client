@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import firebase from 'firebase/app';
 import { FaGoogle } from 'react-icons/fa';
 import 'firebase/auth';
@@ -18,6 +18,8 @@ if (!firebase.apps.length) {
 const provider = new firebase.auth.GoogleAuthProvider();
 const Login = () => {
   const [userLogin, setUserLogin] = useContext(userContext);
+  const [adminEmail, setAdminEmail] = useState([]);
+  const [isAdmin, setAdmin] = useState([]);
   let history = useHistory();
   let location = useLocation();
   let { from } = location.state || { from: { pathname: '/' } };
@@ -52,6 +54,25 @@ const Login = () => {
         // ...
       });
   };
+  const checkEmail = sessionStorage.getItem('email');
+  useEffect(()  =>  {
+    fetch(`https://smartfixer.herokuapp.com/adminCheck`)
+      .then((response) => response.json())
+      .then((data) => setAdminEmail(data));
+  }, []);
+  if (checkEmail !== null)
+  {
+    const isAdminOrNot = adminEmail.filter((email) =>{ return email.user.Email == checkEmail;} );
+    console.log(isAdminOrNot.length);
+    if (isAdminOrNot.length > 0)
+    {
+      sessionStorage.setItem('admin', 'true')
+    } else
+    {
+      sessionStorage.setItem('admin', 'false');
+    }
+  }
+  console.log(adminEmail);
   return (
     <div className='container text-center'>
       <Nav />

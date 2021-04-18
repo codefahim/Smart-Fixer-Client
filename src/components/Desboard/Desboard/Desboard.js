@@ -12,6 +12,8 @@ import logo from '../../../logo.png';
 import './Desboard.css';
 
 const DesBoard = () => {
+  const admin = sessionStorage.getItem('admin');
+  console.log(admin);
   return (
     <div>
       <p>
@@ -30,40 +32,54 @@ const DesBoard = () => {
           </Link>
         </li>
         <li className='nav-item  ms-5'>
-          <Link className='nav-link text-light linkStyle' to='/AddService'>
-            {' '}
-            <FaPlus /> Add Service
-          </Link>
-        </li>
-        <li className='nav-item  ms-5'>
-          <Link className='nav-link text-light linkStyle' to='/MakeAdmin'>
-            {' '}
-            <FaUserPlus /> Make Admin
-          </Link>
-        </li>
-        <li className='nav-item  ms-5'>
-          <Link className='nav-link text-light linkStyle' to='/ManageService'>
-            {' '}
-            <IoAppsOutline /> Manage Services
-          </Link>
-        </li>
-        <li className='nav-item  ms-5'>
-          <Link className='nav-link text-light linkStyle' to='/BookService'>
-            {' '}
-            <IoCartOutline /> Book Service
-          </Link>
-        </li>
-        <li className='nav-item  ms-5'>
           <Link className='nav-link text-light linkStyle' to='/BookingList'>
             {' '}
             <IoList /> Booking List
           </Link>
         </li>
-        <li className='nav-item  ms-5'>
-          <Link className='nav-link text-light linkStyle' to='/Review'>
-            <FaCommentDots /> Review
-          </Link>
-        </li>
+        {admin === 'true' && (
+          <>
+            {' '}
+            <li className='nav-item  ms-5'>
+              <Link className='nav-link text-light linkStyle' to='/AddService'>
+                {' '}
+                <FaPlus /> Add Service
+              </Link>
+            </li>
+            <li className='nav-item  ms-5'>
+              <Link className='nav-link text-light linkStyle' to='/MakeAdmin'>
+                {' '}
+                <FaUserPlus /> Make Admin
+              </Link>
+            </li>
+            <li className='nav-item  ms-5'>
+              <Link
+                className='nav-link text-light linkStyle'
+                to='/ManageService'
+              >
+                {' '}
+                <IoAppsOutline /> Manage Services
+              </Link>
+            </li>
+          </>
+        )}
+        {admin !== 'true' && (
+          <>
+            {' '}
+            <li className='nav-item  ms-5'>
+              <Link className='nav-link text-light linkStyle' to='/BookService'>
+                {' '}
+                <IoCartOutline /> Book Service
+              </Link>
+            </li>
+            <li className='nav-item  ms-5'>
+              <Link className='nav-link text-light linkStyle' to='/PostReview'>
+                <FaCommentDots /> Review
+              </Link>
+            </li>
+          </>
+        )}
+
         <li className='nav-item  ms-5'>
           <Link className='nav-link text-light linkStyle' to='/LogOut'>
             {' '}

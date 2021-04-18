@@ -20,6 +20,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import LogOut from './components/Desboard/LogOut/LogOut';
 import BookService from './components/Desboard/BookService/BookService';
 import BookingList from './components/Desboard/BookingList/BookingList';
+import PostReview from './components/Desboard/PostReview/PostReview';
 export const userContext = createContext([]);
 function App() {
   const [userInfo, setUserInfo] = useState({});
@@ -66,6 +67,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path='/BookingList'>
             <BookingList />
+          </PrivateRoute>
+          <PrivateRoute path='/PostReview'>
+            <PostReview />
           </PrivateRoute>
           <Route path='*'>
             <NoMatch />

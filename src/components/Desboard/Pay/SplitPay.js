@@ -119,7 +119,7 @@ const CheckoutForm = ({ id }) =>
   });
   if (processing)
   {
-    fetch(`http://localhost:5000/update/` + userId, {
+    fetch(`https://smartfixer.herokuapp.com/update/` + userId, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({}),

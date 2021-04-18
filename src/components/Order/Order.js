@@ -6,14 +6,24 @@ import './Order.css';
 const Order = () => {
   let history = useHistory();
   const [order, setOrder] = useState([]);
+  const [singleOrder, setSingleOrder] = useState([]);
   const [remove, setRemove] = useState(false);
+  const email = sessionStorage.getItem('email');
+  const admin = sessionStorage.getItem('admin');
+  console.log(admin, email);
   useEffect(() => {
-    fetch(`http://localhost:5000/OrderList`)
+    fetch(`https://smartfixer.herokuapp.com/OrderList`)
       .then((response) => response.json())
       .then((result) => setOrder(result));
   }, [remove]);
+  if (admin === 'false') {
+    fetch(`https://smartfixer.herokuapp.com/SingleOrderList/` + email)
+      .then((response) => response.json())
+      .then((result) => setSingleOrder(result));
+  }
+
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/removeOrder/` + id, {
+    fetch(`https://smartfixer.herokuapp.com/removeOrder/` + id, {
       method: 'DELETE',
     }).then((result) => {
       alert('Your Product Delete was successful');
@@ -41,34 +51,73 @@ const Order = () => {
                 <td>Pay</td>
               </tr>
             </thead>
-            {order?.map((item) => (
+            {admin === 'true' && (
               <>
-                <tbody>
-                  <tr>
-                    <td>{item.email}</td>
-                    <td className='tdFirst'>
-                      {' '}
-                      <img src={item.image} alt='' className='w-25' />{' '}
-                    </td>
-                    <td>
-                      <code>{item.status}</code>
-                    </td>
-                    <td>
-                      <FaRegTrashAlt
-                        className='iconOfAction'
-                        onClick={() => handleDelete(item._id)}
-                      />
-                    </td>
-                    <td>
-                      <FaRegCreditCard
-                        className='iconOfAction'
-                        onClick={() => handlePay(item._id)}
-                      />
-                    </td>
-                  </tr>
-                </tbody>
+                {' '}
+                {order?.map((item) => (
+                  <>
+                    <tbody>
+                      <tr>
+                        <td>{item.email}</td>
+                        <td className='tdFirst'>
+                          {' '}
+                          <img src={item.image} alt='' className='w-25' />{' '}
+                        </td>
+                        <td>
+                          <code>{item.status}</code>
+                        </td>
+                        <td>
+                          <FaRegTrashAlt
+                            className='iconOfAction'
+                            onClick={() => handleDelete(item._id)}
+                          />
+                        </td>
+                        <td>
+                          <FaRegCreditCard
+                            className='iconOfAction'
+                            onClick={() => handlePay(item._id)}
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </>
+                ))}
               </>
-            ))}
+            )}
+
+            {admin === 'false' && (
+              <>
+                {' '}
+                {singleOrder?.map((item) => (
+                  <>
+                    <tbody>
+                      <tr>
+                        <td>{item.email}</td>
+                        <td className='tdFirst'>
+                          {' '}
+                          <img src={item.image} alt='' className='w-25' />{' '}
+                        </td>
+                        <td>
+                          <code>{item.status}</code>
+                        </td>
+                        <td>
+                          <FaRegTrashAlt
+                            className='iconOfAction'
+                            onClick={() => handleDelete(item._id)}
+                          />
+                        </td>
+                        <td>
+                          <FaRegCreditCard
+                            className='iconOfAction'
+                            onClick={() => handlePay(item._id)}
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </>
+                ))}
+              </>
+            )}
           </table>
         </div>
       </div>
