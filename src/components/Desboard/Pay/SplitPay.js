@@ -250,13 +250,11 @@ const ELEMENTS_OPTIONS = {
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
 
-const SplitPay = ({id}) => {
-console.log(id)
-  
+const SplitPay = ({ id }) => {
   return (
     <div className='AppWrapper'>
       <Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
-              <CheckoutForm id={id} key={id} />
+        <CheckoutForm id={id} key={id} />
       </Elements>
     </div>
   );

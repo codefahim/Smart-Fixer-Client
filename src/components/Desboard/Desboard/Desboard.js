@@ -13,7 +13,6 @@ import './Desboard.css';
 
 const DesBoard = () => {
   const admin = sessionStorage.getItem('admin');
-  console.log(admin);
   return (
     <div>
       <p>

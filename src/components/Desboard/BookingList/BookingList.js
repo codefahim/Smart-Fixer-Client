@@ -20,19 +20,22 @@ const BookingList = () => {
    }
    const selectValue = (id) => {
      const selectorValue = document.getElementById('shipment')?.value;
-     fetch(`https://smartfixer.herokuapp.com/updateShipment/` + id, {
-       method: 'PATCH',
-       headers: { 'Content-Type': 'application/json' },
-       body: JSON.stringify({ selectorValue }),
-     })
-       .then((response) => response.json())
-       .then((result) => {
-         if (result) {
-           alert('Your Shipment Status Updated.');
-           let location = window.location;
-           location.reload();
-         }
-       });
+     console.log(id);
+     if (selectorValue !== 'Select') {
+       fetch(`https://smartfixer.herokuapp.com/updateShipment/` + id, {
+         method: 'PATCH',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify({ selectorValue }),
+       })
+         .then((response) => response.json())
+         .then((result) => {
+           if (result) {
+             alert('Your Shipment Status Updated.');
+             let location = window.location;
+             location.reload();
+           }
+         });
+      }
      console.log(selectorValue);
    };
  
@@ -106,16 +109,17 @@ const BookingList = () => {
                           className='card-img-top img-fluid w-25 m-auto py-3'
                           alt='...'
                         />
-                        <code
-                          className={
-                            'btn ' +
-                            (service.shipment == 'pending'
-                              ? 'btn-danger'
-                              : 'btn-success')
-                          }
-                        >
-                          {service.shipment}
-                        </code>
+
+                        {service.shipment === 'Pending' && (
+                          <code className='btn btn-danger'>
+                            {service.shipment}
+                          </code>
+                        )}
+                        {service.shipment === 'Delivered' && (
+                          <code className='btn btn-success'>
+                            {service.shipment}
+                          </code>
+                        )}
                         <div className='card-body'>
                           <h5 className='card-title'>
                             {service.user.ServiceTitle}

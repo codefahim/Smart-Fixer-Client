@@ -26,7 +26,7 @@ const Service = () =>
     {
       item['email'] = email;
       item['status'] = 'Not Paid';
-      item['shipment'] = 'pending';
+      item['shipment'] = 'Pending';
       item['review'] = 'No review';
       fetch(`https://smartfixer.herokuapp.com/ProductAdd`, {
         method: 'POST',
