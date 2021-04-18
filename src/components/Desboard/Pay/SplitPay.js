@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
+ 
 import {
   CardElement,
   Elements,
@@ -7,7 +8,7 @@ import {
   useStripe,
 } from '@stripe/react-stripe-js';
 import './Pay.css';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router';
 const CARD_OPTIONS = {
   iconStyle: 'solid',
   style: {
@@ -102,7 +103,9 @@ const ResetButton = ({ onClick }) => (
   </button>
 );
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ id }) =>
+{
+  const userId = id;
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -114,8 +117,15 @@ const CheckoutForm = () => {
     phone: '',
     name: '',
   });
-  if (processing) {
-    console.log('kaj kore');
+  if (processing)
+  {
+    fetch(`http://localhost:5000/update/` + userId, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({}),
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
   }
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -160,6 +170,7 @@ const CheckoutForm = () => {
       name: '',
     });
   };
+
   return paymentMethod ? (
     <div className='Result'>
       <div className='ResultTitle' role='alert'>
@@ -239,11 +250,13 @@ const ELEMENTS_OPTIONS = {
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
 
-const SplitPay = () => {
+const SplitPay = ({id}) => {
+console.log(id)
+  
   return (
     <div className='AppWrapper'>
       <Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
-        <CheckoutForm />
+              <CheckoutForm id={id} key={id} />
       </Elements>
     </div>
   );

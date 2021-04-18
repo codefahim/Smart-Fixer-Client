@@ -3,6 +3,7 @@ import DesBoard from '../Desboard/Desboard';
 import { useForm } from 'react-hook-form';
 import './BookService.css';
 import SplitPay from '../Pay/SplitPay';
+import { useParams } from 'react-router';
 const BookService = () => {
   const [location, setLocation] = useState([]);
 
@@ -17,7 +18,8 @@ const BookService = () => {
     document.getElementById('pay').style.display = 'block';
     console.log(data);
   }
-
+    let { id } = useParams();
+    console.log(id);
   return (
     <div className='row w-100'>
       <div className='col-md-3 Primary-bg-Color Primary-height text-light'>
@@ -47,7 +49,7 @@ const BookService = () => {
         </div>
         <div id='pay' className='text-center mt-5'>
           {/* <Pay /> */}
-          <SplitPay />
+          <SplitPay key={id} id={id} />
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ const Nav = () => {
   const photo = sessionStorage.getItem('photo');
   console.log(photo);
   return (
-    <div >
+    <div>
       <nav className='navbar navbar-expand-lg navbar-light nav-bg '>
         <div className='container-fluid'>
           <Link className='navbar-brand' to='/Home'>
@@ -39,6 +39,7 @@ const Nav = () => {
                   Order
                 </Link>
               </li>
+              
               {photo == null && (
                 <li className='nav-item'>
                   <Link className='nav-link' to='/Login'>

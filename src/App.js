@@ -1,5 +1,11 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+} from 'react-router-dom';
 import Home from './components/Home/Home/Home';
 import AddService from './components/Desboard/AddService/AddService';
 import OrderLIst from './components/Desboard/OrderList/OrderLIst';
@@ -13,6 +19,7 @@ import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import LogOut from './components/Desboard/LogOut/LogOut';
 import BookService from './components/Desboard/BookService/BookService';
+import BookingList from './components/Desboard/BookingList/BookingList';
 export const userContext = createContext([]);
 function App() {
   const [userInfo, setUserInfo] = useState({});
@@ -51,8 +58,14 @@ function App() {
           <PrivateRoute path='/LogOut'>
             <LogOut />
           </PrivateRoute>
+          <PrivateRoute path='/BookService/:id'>
+            <BookService />
+          </PrivateRoute>
           <PrivateRoute path='/BookService'>
             <BookService />
+          </PrivateRoute>
+          <PrivateRoute path='/BookingList'>
+            <BookingList />
           </PrivateRoute>
           <Route path='*'>
             <NoMatch />

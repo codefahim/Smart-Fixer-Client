@@ -26,16 +26,18 @@ const Service = () =>
     {
       item['email'] = email;
       item['status'] = 'Not Paid';
-       fetch(`http://localhost:5000/ProductAdd`, {
-         method: 'POST',
-         headers: { 'Content-Type': 'application/json' },
-         body: JSON.stringify(item),
-       }).then((result) => {
-         if (result) {
-           alert('Product Successfully added!');
-         }
-       });
-   }
+      item['shipment'] = 'pending';
+      item['review'] = 'No review';
+      fetch(`http://localhost:5000/ProductAdd`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(item),
+      }).then((result) => {
+        if (result) {
+          alert('Product Successfully added!');
+        }
+      });
+    }
   };
   return (
     <section>

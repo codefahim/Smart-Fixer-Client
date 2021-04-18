@@ -20,9 +20,8 @@ const Order = () => {
       setRemove(!remove);
     });
   };
-  const handlePay = () => {
-    history.push('/BookService');
-    console.log('pay');
+  const handlePay = (id) => {
+    history.push(`/BookService/${id}`);
   };
   return (
     <div className='row w-100'>
@@ -63,7 +62,7 @@ const Order = () => {
                     <td>
                       <FaRegCreditCard
                         className='iconOfAction'
-                        onClick={() => handlePay()}
+                        onClick={() => handlePay(item._id)}
                       />
                     </td>
                   </tr>
