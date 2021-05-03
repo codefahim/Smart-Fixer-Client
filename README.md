@@ -1,8 +1,8 @@
 # Smart Fixer
 
-This is A FullStack Project [VisitSite](https://smartfixer-e52eb.web.app/).
+This is A FullStack MERN Project [Visit](https://smartfixer-e52eb.web.app/).
 
-## Base ON
+## List of Used Technology 
 
 FrontEnd : React Js \
 BackEnd: Express Js.
