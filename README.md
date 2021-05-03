@@ -11,19 +11,19 @@ React Js
 React Hook Form
 React Bootstrap
 ```
->Data Loading  :date:
+>Data Loading  :package:
 ```
 Axios
 ```
->Payment System
+>Payment System :package:
 ```
 Stripe Js
 ```
->Authentication
+>Authentication :package:
 ```
 Firebase Auth
 ```
->Icons
+>Icons :package:
 ```
 React Icons
 ```
