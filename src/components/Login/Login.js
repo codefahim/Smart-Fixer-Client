@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import firebase from 'firebase/app';
 import { FaGoogle } from 'react-icons/fa';
 import 'firebase/auth';
-import firebaseConfig from '../firebaseConfig';
+import firebaseConfig from '../../firebaseConfig';
 import './login.css';
 import { userContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
