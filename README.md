@@ -10,13 +10,14 @@ This is A FullStack MERN Project.
 ```
 React Js
 React Hook Form
+React Router
 React Bootstrap
 ```
 >Data Loading  :package:
 ```
 Axios
 ```
->Payment System :package:
+>Payment System :package: :pound:
 ```
 Stripe Js
 ```
@@ -46,7 +47,8 @@ Body-Parser
 ### `Web application Future ` :dart:
 
 - MERN Stack app with Dashboard for user and admin.
->Dashboard (User and Admin)
+    - >Dashboard (User and Admin)
+
 - User Can Book Service and Post Review on Purchased Service.
 - Implement an International payment method, So Users can pay with Test Data
 
