@@ -27,10 +27,10 @@ Firebase Auth
 ```
 React Icons
 ```
->Back End (core)
+>Back End (core) :white_check_mark:
 ```
-:white_check_mark: Node Js
-:white_check_mark: Express Js
+ Node Js
+ Express Js
 ```
 
 ### `Types of Site or Web App`
