@@ -5,7 +5,7 @@ This is A FullStack MERN Project.
 
 ## List of Used Technology 
 
->Front End (base)
+>Front End (core)
 ```
 React Js
 React Hook Form
@@ -27,7 +27,11 @@ Firebase Auth
 ```
 React Icons
 ```
->Back End
+>Back End (core)
+```
+:white_check_mark: Node Js
+:white_check_mark: Express Js
+```
 
 ### `Types of Site or Web App`
 
