@@ -44,6 +44,13 @@ Cors
 Body-Parser
 ```
 ### `Web application Future ` :dart:
+
+- MERN Stack app with Dashboard for user and admin.
+- User Can Book Service and Post Review on Purchased Service.
+- Implement an International payment method, So Users can pay with Test Data
+
+
+
 ### `Types of Site or Web App`
 
 Service Provider Base Website.
