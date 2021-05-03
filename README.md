@@ -2,6 +2,7 @@
 
 This is A FullStack MERN Project.
 >Live Here: [Smart Fixer](https://smartfixer-e52eb.web.app/).
+>Server Side Code : [server-side](https://github.com/codefahim/Smart-Fixer-Server)
 
 ## List of Used Technology 
 
@@ -31,6 +32,16 @@ React Icons
 ```
  Node Js
  Express Js
+```
+>More Packages :package:
+```
+Nodemon
+DotEnv
+```
+>Middle Wares :gem:
+```
+Cors
+Body-Parser
 ```
 
 ### `Types of Site or Web App`
