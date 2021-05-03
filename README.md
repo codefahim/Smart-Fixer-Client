@@ -5,13 +5,13 @@ This is A FullStack MERN Project.
 
 ## List of Used Technology 
 
->Front End (core)
+>Front End (core) :white_check_mark: 
 ```
 React Js
 React Hook Form
 React Bootstrap
 ```
->Data Loading 
+>Data Loading  :date:
 ```
 Axios
 ```
