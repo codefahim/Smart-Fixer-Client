@@ -48,6 +48,8 @@ Body-Parser
 
 - MERN Stack app with Dashboard for user and admin.
     - >Dashboard (User and Admin)
+    - Admin can took action for all the user.
+    - user can took action only purchased product.
 
 - User Can Book Service and Post Review on Purchased Service.
 - Implement an International payment method, So Users can pay with Test Data
