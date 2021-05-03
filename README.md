@@ -9,12 +9,24 @@ This is A FullStack MERN Project.
 ```
 React Js
 React Hook Form
+React Bootstrap
+```
+>Data Loading 
+```
+Axios
+```
+>Payment System
+```
+Stripe Js
+```
+>Authentication
+```
+Firebase Auth
 ```
 >Icons
 ```
 React Icons
 ```
->Payment System
 >Back End
 
 ### `Types of Site or Web App`
