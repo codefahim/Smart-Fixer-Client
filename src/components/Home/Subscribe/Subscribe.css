@@ -6,3 +6,15 @@
 .Subscribe{
     border-bottom: 0.8px solid #eaeaea;
 }
+
+@media screen and (max-width: 768px){
+    .responsive-section{
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width: 992px){
+   
+    .responsive-section>input{
+        width: 100%;
+    }
+}

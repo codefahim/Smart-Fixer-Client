@@ -4,7 +4,7 @@ const Subscribe = () => {
   return (
     <section
       className='Subscribe Primary-bg-Color text-center row'
-      style={{ height: '250px' }}
+      style={{ minHeight: '250px' }}
     >
       <div className='col-md-6 mt-5'>
         <h2 className='text-light fs-2'>Free Monthly Newsletter</h2>
@@ -14,7 +14,7 @@ const Subscribe = () => {
           spam, and you can unsubscribe easily.
         </p>
       </div>
-      <div className='col-md-6 mt-5'>
+      <div className='col-md-6 mt-5 responsive-section'>
         <input
           className='subscription'
           type='email'
