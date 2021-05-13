@@ -7,6 +7,9 @@
     border-radius: 10px;
     cursor: pointer;
 }
+.cardHover{
+    height:350px;
+}
 .loading-animation{
     border: 1px solid lightgrey;
     height: 250px;
@@ -41,4 +44,10 @@
    0%{background-color: rgba(165,165,165,0.1);}
     50%{background-color: rgba(165,165,165,0.3);}
     100%{background-color: rgba(165,165,165,0.1);} 
+}
+
+@media screen and (max-width:768px){
+    .cardHover{
+    height:375px;
+}
 }

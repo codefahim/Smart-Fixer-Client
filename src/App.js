@@ -1,11 +1,5 @@
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home/Home/Home';
 import AddService from './components/Desboard/AddService/AddService';
 import OrderLIst from './components/Desboard/OrderList/OrderLIst';

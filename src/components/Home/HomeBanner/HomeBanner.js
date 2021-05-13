@@ -16,13 +16,13 @@ const HomeBanner = () => {
 
         <button>
           {' '}
-          <a href="#service" className='newLink'>
+          <a href='#service' className='newLink'>
             Fix my Device <FaChevronCircleRight />
           </a>
         </button>
       </div>
       <div className='col-md-6'>
-        <img src={bannerImage} alt='' />
+        <img src={bannerImage} alt='' className='img-fluid' />
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ const AboutTechnician = () => {
   return (
     <section className='about-technician row my-5'>
       <div className='col-md-6'>
-        <img src={technician} alt='' />
+        <img src={technician} alt='' className='img-fluid' />
       </div>
       <div className='col-md-6'>
         <h3 className='Green-Color fs-5'>Professional Repair Technicians</h3>
