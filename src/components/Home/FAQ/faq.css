@@ -1,0 +1,18 @@
+.card-header{ 
+ border: 0;
+}
+.card-header:hover{ 
+      -webkit-box-shadow: 7px 7px 26px -1px rgba(230,143,230,0.26);
+-moz-box-shadow: 7px 7px 26px -1px rgba(230,143,230,0.26);
+box-shadow: 7px 7px 26px -1px rgba(230,143,230,0.26);
+}
+.btn-link{
+    color: black;
+    text-decoration: none;
+}
+.card{
+    margin: 10px;
+}
+.faq{
+    margin-bottom: 40px;
+}

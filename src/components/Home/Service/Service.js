@@ -39,7 +39,7 @@ const Service = () =>
     }
   };
   return (
-    <section>
+    <section id='service'>
       <h2 className='Green-Color fs-1 text-center'>
         Our <span className='Color-Apple'>Services</span>
       </h2>

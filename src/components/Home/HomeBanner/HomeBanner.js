@@ -16,7 +16,9 @@ const HomeBanner = () => {
 
         <button>
           {' '}
-          Fix my Device <FaChevronCircleRight />
+          <a href="#service" className='newLink'>
+            Fix my Device <FaChevronCircleRight />
+          </a>
         </button>
       </div>
       <div className='col-md-6'>

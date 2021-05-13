@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+html{
+  scroll-behavior: smooths;
+}
 .Primary-Color{
   color: #022243;
 }.Primary-bg-Color{

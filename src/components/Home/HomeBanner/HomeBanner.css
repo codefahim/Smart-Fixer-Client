@@ -6,3 +6,7 @@ button{
     border-start-end-radius: 15px;
     font-weight: bold;
 }
+.newLink{
+    color: black;
+    text-decoration: none;
+}
