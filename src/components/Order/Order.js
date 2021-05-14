@@ -7,6 +7,7 @@ const Order = () => {
   let history = useHistory();
   const [order, setOrder] = useState([]);
   const [singleOrder, setSingleOrder] = useState([]);
+
   const [remove, setRemove] = useState(false);
   const email = sessionStorage.getItem('email');
   const admin = sessionStorage.getItem('admin');
@@ -73,10 +74,12 @@ const Order = () => {
                           />
                         </td>
                         <td>
-                          <FaRegCreditCard
-                            className='iconOfAction'
-                            onClick={() => handlePay(item._id)}
-                          />
+                          {item.status !== 'paid' && (
+                            <FaRegCreditCard
+                              className='iconOfAction'
+                              onClick={() => handlePay(item._id)}
+                            />
+                          )}
                         </td>
                       </tr>
                     </tbody>
@@ -88,6 +91,11 @@ const Order = () => {
             {admin === 'false' && (
               <>
                 {' '}
+                {singleOrder.length === 0 && (
+                  <p className='text-center text-uppercase fw-bolder text-danger'>
+                    You don't have any Order.
+                  </p>
+                )}
                 {singleOrder?.map((item) => (
                   <>
                     <tbody>

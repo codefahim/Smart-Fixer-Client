@@ -46,13 +46,13 @@ const BookingList = () => {
       </div>
       <div className='col-md-9 bg-Secondary-Color'>
         <h4 className='text-center my-5'>List Of Your Booked Service</h4>
-        <code>Note: You can see the service here without payment.</code>
+        <code>Note: You can't see the service here without payment.</code>
         <div className='row'>
           {admin === 'true' && (
             <>
               {paidService.map((service) => (
                 <div className='col-md-4'>
-                  {service.status == 'paid' && (
+                  {service.status === 'paid' && (
                     <div>
                       <div className='card'>
                         <img
@@ -98,10 +98,10 @@ const BookingList = () => {
           )}
 
           {admin === 'true' && (
-            <>
+            <div className="row">
               {singleService.map((service) => (
                 <div className='col-md-4'>
-                  {service.status == 'paid' && (
+                  {service.status === 'paid' && (
                     <div>
                       <div className='card'>
                         <img
@@ -133,7 +133,7 @@ const BookingList = () => {
                   )}
                 </div>
               ))}
-            </>
+            </div>
           )}
         </div>
       </div>

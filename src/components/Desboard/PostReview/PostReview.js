@@ -19,6 +19,11 @@ const PostReview = () => {
       }).then((json) => console.log(json));
     }
   };
+  const userEmail = sessionStorage.getItem('email');
+  const userPurchasedData = paidService.filter(
+    (user) => user.email === userEmail
+  );
+  console.log(userPurchasedData);
   return (
     <div className='row w-100'>
       <div className='col-md-3 Primary-bg-Color Primary-height text-light'>
@@ -28,7 +33,7 @@ const PostReview = () => {
         <div className='row'>
           {paidService.map((service) => (
             <div className='col-md-4'>
-              {service.status == 'paid' && (
+              {service.status === 'paid' && (
                 <div>
                   <div className='card'>
                     <img
@@ -59,6 +64,6 @@ const PostReview = () => {
       </div>
     </div>
   );
-};
+};;
 
 export default PostReview;
